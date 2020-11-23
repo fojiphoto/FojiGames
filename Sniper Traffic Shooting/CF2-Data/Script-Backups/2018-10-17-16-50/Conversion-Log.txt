@@ -1,0 +1,64 @@
+Converting script [1 / 5]	[\AdvancedSniperStarterKit\SniperGame\Component\FreeCamera.cs]
+	Fragments : 3
+		[ 0] : Line:   14	InputMethod   GetKey              	(KeyCode.LeftShift)
+		[ 1] : Line:   17	InputMethod   GetAxis             	("Vertical")
+		[ 2] : Line:   17	InputMethod   GetAxis             	("Horizontal")
+
+Converting script [2 / 5]	[\AdvancedSniperStarterKit\SniperGame\Component\TouchScreenVal.cs]
+	Fragments : 25
+		[ 0] : Line:   85	InputProperty touchCount          
+		[ 1] : Line:   86	InputMethod   GetTouch            	(i)
+		[ 2] : Line:   86	InputMethod   GetTouch            	(i)
+		[ 3] : Line:   97	InputProperty touchCount          
+		[ 4] : Line:   98	InputMethod   GetTouch            	(i)
+		[ 5] : Line:   99	InputMethod   GetTouch            	(i)
+		[ 6] : Line:   99	InputMethod   GetTouch            	(i)
+		[ 7] : Line:  114	InputProperty touchCount          
+		[ 8] : Line:  115	InputMethod   GetTouch            	(i)
+		[ 9] : Line:  116	InputMethod   GetTouch            	(i)
+		[10] : Line:  116	InputMethod   GetTouch            	(i)
+		[11] : Line:  134	InputProperty touchCount          
+		[12] : Line:  135	InputMethod   GetTouch            	(i)
+		[13] : Line:  137	InputMethod   GetTouch            	(i)
+		[14] : Line:  138	InputMethod   GetTouch            	(i)
+		[15] : Line:  138	InputMethod   GetTouch            	(i)
+		[16] : Line:  143	InputMethod   GetTouch            	(i)
+		[17] : Line:  143	InputMethod   GetTouch            	(i)
+		[18] : Line:  163	InputProperty touchCount          
+		[19] : Line:  164	InputMethod   GetTouch            	(i)
+		[20] : Line:  166	InputMethod   GetTouch            	(i)
+		[21] : Line:  167	InputMethod   GetTouch            	(i)
+		[22] : Line:  167	InputMethod   GetTouch            	(i)
+		[23] : Line:  172	InputMethod   GetTouch            	(i)
+		[24] : Line:  172	InputMethod   GetTouch            	(i)
+
+Converting script [3 / 5]	[\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\HowTo.cs]
+	Fragments : 2
+		[ 0] : Line:   19	InputMethod   GetKeyDown          	(KeyCode.F)
+		[ 1] : Line:   31	InputMethod   GetKeyDown          	(KeyCode.Escape)
+
+Converting script [4 / 5]	[\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\MouseLock.cs]
+	Fragments : 5
+		[ 0] : Line:   17	Other mod.	[Screen.lockCursor]
+		[ 1] : Line:   19	Other mod.	[Cursor.visible]
+		[ 2] : Line:   20	Other mod.	[Cursor.visible]
+		[ 3] : Line:   21	Other mod.	[Cursor.lockState]
+		[ 4] : Line:   23	Other mod.	[Cursor.lockState]
+
+Converting script [5 / 5]	[\AdvancedSniperStarterKit\SniperGame\Scripts\SimpleController.cs]
+	Fragments : 4
+		[ 0] : Line:   13	InputMethod   GetKey              	(KeyCode.UpArrow)
+		[ 1] : Line:   16	InputMethod   GetKey              	(KeyCode.DownArrow)
+		[ 2] : Line:   19	InputMethod   GetKey              	(KeyCode.LeftArrow)
+		[ 3] : Line:   22	InputMethod   GetKey              	(KeyCode.RightArrow)
+
+
+5 scripts modified!
+Overwriting actual scripts...
+	[0 / 5] from  [E:/Unity Projects/export data/CF2-Data/Script-Backups/2018-10-17-16-50\Assets-After/\AdvancedSniperStarterKit\SniperGame\Component\FreeCamera.cs] to [E:/Unity Projects/export data/Assets/\AdvancedSniperStarterKit\SniperGame\Component\FreeCamera.cs]
+	[1 / 5] from  [E:/Unity Projects/export data/CF2-Data/Script-Backups/2018-10-17-16-50\Assets-After/\AdvancedSniperStarterKit\SniperGame\Component\TouchScreenVal.cs] to [E:/Unity Projects/export data/Assets/\AdvancedSniperStarterKit\SniperGame\Component\TouchScreenVal.cs]
+	[2 / 5] from  [E:/Unity Projects/export data/CF2-Data/Script-Backups/2018-10-17-16-50\Assets-After/\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\HowTo.cs] to [E:/Unity Projects/export data/Assets/\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\HowTo.cs]
+	[3 / 5] from  [E:/Unity Projects/export data/CF2-Data/Script-Backups/2018-10-17-16-50\Assets-After/\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\MouseLock.cs] to [E:/Unity Projects/export data/Assets/\AdvancedSniperStarterKit\SniperGame\FPSplayer\Scripts\MouseLock.cs]
+	[4 / 5] from  [E:/Unity Projects/export data/CF2-Data/Script-Backups/2018-10-17-16-50\Assets-After/\AdvancedSniperStarterKit\SniperGame\Scripts\SimpleController.cs] to [E:/Unity Projects/export data/Assets/\AdvancedSniperStarterKit\SniperGame\Scripts\SimpleController.cs]
+
+Overwriting COMPLETED!
