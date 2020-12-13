@@ -87,7 +87,7 @@ public class LevelSelection : MonoBehaviour {
     }
 
     public void SelectLevel(int levelNo) {
-        
+        Loading.SetActive(true);
 
         if (GameManager.City)
         {
@@ -95,7 +95,7 @@ public class LevelSelection : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("SelectedCity", levelNo);
                 Application.LoadLevel("City Shooting");
-                Loading.SetActive(true);
+    
 
             }
         }
@@ -105,7 +105,7 @@ public class LevelSelection : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("SelectedDesert", levelNo);
                 Application.LoadLevel("Desert Shooting");
-                Loading.SetActive(true);
+    
 
             }
         }
@@ -115,7 +115,7 @@ public class LevelSelection : MonoBehaviour {
                 {
                     PlayerPrefs.SetInt("SelectedSnow", levelNo);
                     Application.LoadLevel("Snow Shooting");
-                Loading.SetActive(true);
+                
 
             }
         }
@@ -125,7 +125,7 @@ public class LevelSelection : MonoBehaviour {
                     {
                         PlayerPrefs.SetInt("SelectedForest", levelNo);
                         Application.LoadLevel("Forest Shooting");
-                Loading.SetActive(true);
+               
 
             }
         }

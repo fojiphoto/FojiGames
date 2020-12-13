@@ -69,6 +69,7 @@ public class MainMenuZombie : MonoBehaviour {
     }
     public void Play()
     {
+        SoundManager.Instant.ButtonClicked();
         Application.LoadLevel("Inventory");
     }
     public void Sound()
