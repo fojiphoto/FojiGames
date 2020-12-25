@@ -11,7 +11,7 @@ public class MainMenuZombie : MonoBehaviour {
     public string MoreGames;
     bool exit;
     public GameObject ExiDG;
-    public AdCalls ads;
+    //public AdCalls ads;
 	// Use this for initialization
 	void Start () {
         if (GameObject.FindGameObjectWithTag("sound") == null)
@@ -33,7 +33,7 @@ public class MainMenuZombie : MonoBehaviour {
             else
             {
                 exit = true;
-                ads.UnityInterstitial();
+                //ads.UnityInterstitial();
                 ExiDG.SetActive(true);
             }
         }

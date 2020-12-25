@@ -15,7 +15,7 @@ public class GamePlay : MonoBehaviour {
     bool onetime;
     public AudioSource audios;
     public AudioClip levelfailsound, levelcompletesound;
-    public AdCalls ads;
+   // public AdCalls ads;
     GameObject ActionCam;
     // Use this for initialization
     private void Awake()
@@ -27,11 +27,13 @@ public class GamePlay : MonoBehaviour {
         Player.position = PlayerPos[rnd].transform.position;
         Player.rotation = PlayerPos[rnd].transform.rotation;
     }
+
     void Start() {
         if (GameObject.FindGameObjectWithTag("sound") != null)
         {
             Destroy(GameObject.FindGameObjectWithTag("sound"));
         }
+        AdsManager.instance.LoadInterstetial();
         GameManager.CarCount = 0;
         GameManager.BikeCount = 0;
         GameManager.JeepCount = 0;
@@ -247,7 +249,7 @@ public class GamePlay : MonoBehaviour {
         }
         LevelCompeltePanel.SetActive(true);
         GameManager.start = false;
-        ads.UnityInterstitial();
+        AdsManager.instance.ShowInterstetial();
         Debug.Log("Level Is Complete");
     }
     public void FailedReason()
@@ -259,7 +261,7 @@ public class GamePlay : MonoBehaviour {
         audios.PlayOneShot(levelfailsound);
         LevelFailpanel.SetActive(true);
         Time.timeScale = 0;
-        ads.UnityInterstitial();
+        AdsManager.instance.ShowInterstetial();
         Debug.Log("Level Is Failed");
     }
 }

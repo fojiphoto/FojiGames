@@ -12,6 +12,8 @@ public class LevelSelection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        AdsManager.instance.ShowInterstetial();
+
       // PlayerPrefs.DeleteAll();
         Desert.SetActive(false);
         city.SetActive(false);
@@ -78,7 +80,15 @@ public class LevelSelection : MonoBehaviour {
        
 
     }
-	
+
+    public void ShowRewardedVideo()
+    {
+        AdsManager.instance.ShowRewarded(this.RewardCoins);
+    }
+    public void RewardCoins()
+    {
+        PlayerPrefs.SetInt("Cash", 100);
+    }
 
     public void BackButton()
     {

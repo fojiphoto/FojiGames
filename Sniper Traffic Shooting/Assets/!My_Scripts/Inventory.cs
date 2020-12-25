@@ -20,15 +20,18 @@ public class Inventory : MonoBehaviour
     
     private void Start()
     {
+        AdsManager.instance.ShowInterstetial();
         PlayerPrefs.SetInt("Gun" + gunNo, 1);
         PlayerPrefs.SetInt("Scope" + ScopeNum, 1);
         PlayerPrefs.SetInt("Bullet" + BulletNum, 1);
         PlayerPrefs.SetInt("Hold" + HoldNum, 1);
         GetValues();
-
-
     }
 
+    public void ShowRewardedVideo()
+    {
+        AdsManager.instance.ShowRewarded(this.RewardCoins);
+    }
    
     void GetValues()
     {
@@ -51,7 +54,11 @@ public class Inventory : MonoBehaviour
         Bars[5].fillAmount = (gunNo + 1) * 0.17f;
     }
 
-
+    public void RewardCoins()
+    {
+        PlayerPrefs.SetInt("Cash", 100);
+        Cash.text = "" + PlayerPrefs.GetInt("Cash");
+    }
 
     private void Update()
     {
