@@ -30,6 +30,7 @@ public class AdsManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         this.InitializeAds();
+        this.InitializeAdsObjects();
     }
 
     public void AddingDevices()
@@ -61,14 +62,20 @@ public class AdsManager : MonoBehaviour
 
     public void InitializeAds()
     {
-        Debug.Log("initialize Admob");
+        Constant.Log("initialize Admob");
 
         MobileAds.Initialize((initAction) =>
         {
-            Debug.Log("Admob Initialized");
+            Constant.Log("Admob Initialized");
             this.LoadInterstetial();
             this.LoadRewarded();
         });
+    }
+
+    public void InitializeAdsObjects()
+    {
+        this.interstetialAd = new InterstitialAd(this.interstetialID);
+        this.rewardedAd = new RewardedAd(this.RewardedID);
     }
 
     public void InitializeInterstetialAd()
@@ -94,20 +101,34 @@ public class AdsManager : MonoBehaviour
     public void LoadInterstetial()
     {
 
-        if (this.IsInterstetialLoaded)
-            return;
+        //if (this.IsInterstetialLoaded)
+        //    return;
 
         this.interstetialAd = new InterstitialAd(this.interstetialID);
 
+        this.interstetialAd.OnAdLoaded += OnInterstetialLoaded;
+        this.interstetialAd.OnAdClosed += InterstetialAd_OnAdClosed;
+
         AdRequest request = new AdRequest.Builder().Build();
         this.interstetialAd.LoadAd(request);
+
+    }
+
+    private void InterstetialAd_OnAdClosed(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnInterstetialLoaded(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 
     public void ShowInterstetial()
     {
         if (this.interstetialAd.IsLoaded())
         {
-            Debug.Log("Show Interstetial");
+            Constant.Log("Show Interstetial");
             this.interstetialAd.Show();
         }
 
@@ -136,12 +157,9 @@ public class AdsManager : MonoBehaviour
     {
         get
         {
-            bool isRewardedAdLoaded = false;
-
             if (this.rewardedAd != null)
-                isRewardedAdLoaded = this.rewardedAd.IsLoaded();
-
-            return isRewardedAdLoaded;
+                return this.rewardedAd.IsLoaded();
+            return false;
         }
     }
 
@@ -149,19 +167,17 @@ public class AdsManager : MonoBehaviour
     {
         get
         {
-            bool isInterstetialLoaded = false;
+            if(this.interstetialAd!=null)
+            return this.interstetialAd.IsLoaded();
 
-            if (this.interstetialAd != null)
-                isInterstetialLoaded = this.interstetialAd.IsLoaded();
-
-            return isInterstetialLoaded;
+            return false;
         }
     }
 
     public void LoadRewarded()
     {
-        if (this.IsRewardedAdLoaded)
-            return;
+        //if (this.IsRewardedAdLoaded)
+        //    return;
 
         this.rewardedAd = new RewardedAd(this.RewardedID);
         this.rewardedAd.OnAdClosed += this.RewardedAdClosed;
@@ -174,7 +190,7 @@ public class AdsManager : MonoBehaviour
     {
         if(this.rewardedAd.IsLoaded())
         {
-            Debug.Log("Show Rewarded");
+            Constant.Log("Show Rewarded");
             this.rewardDelegate = rewardDelegate;
             this.rewardedAd.Show();
         }

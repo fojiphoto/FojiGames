@@ -148,6 +148,7 @@ public class GamePlay : MonoBehaviour {
     public void MainMenu()
     {
         Time.timeScale = 1;
+        AdsManager.instance.ShowInterstetial();
         SceneManager.LoadScene("MainMenu");
     }
     public void Resume()
@@ -157,6 +158,7 @@ public class GamePlay : MonoBehaviour {
     }
     public void Restart()
     {
+        AdsManager.instance.ShowInterstetial();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Pause() {

@@ -6,6 +6,7 @@ public class ModeSelection : MonoBehaviour {
     public Text Cash;
     //public GameObject[] Selected;
     int modeNo;
+
     // Use this for initialization
     void Start()
     {
@@ -62,6 +63,20 @@ public class ModeSelection : MonoBehaviour {
         PlayerPrefs.SetInt("Mode", modeNo);
         NextButton();
     }
+
+    public void ShowRewardedVideo()
+    {
+        AdsManager.instance.ShowRewarded(this.RewardCoins);
+        Cash.text = PlayerPrefs.GetInt("Cash").ToString();
+    }
+
+    public void RewardCoins()
+    {
+
+        PlayerPrefs.SetInt("Cash",PlayerPrefs.GetInt("Cash") + 50);
+        Cash.text = PlayerPrefs.GetInt("Cash").ToString();
+    }
+
     public void ForestMode()
     {
         GameManager.AllModeFalse();

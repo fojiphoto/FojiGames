@@ -13,6 +13,7 @@ public class MainMenuZombie : MonoBehaviour {
     public GameObject ExiDG;
     //public AdCalls ads;
 	// Use this for initialization
+
 	void Start () {
         if (GameObject.FindGameObjectWithTag("sound") == null)
         {
@@ -48,6 +49,19 @@ public class MainMenuZombie : MonoBehaviour {
                 PlayerPrefs.SetInt("LevelNoDesert", 9);
                 PlayerPrefs.SetInt("LevelNoCity", 9);
         }
+    }
+
+    public void ShowRewardedVideo()
+    {
+        AdsManager.instance.ShowRewarded(this.RewardCoins);
+        CashText.text = PlayerPrefs.GetInt("Cash").ToString();
+    }
+
+    public void RewardCoins()
+    {
+
+        PlayerPrefs.SetInt("Cash", PlayerPrefs.GetInt("Cash") + 50);
+        CashText.text = PlayerPrefs.GetInt("Cash").ToString();
     }
 
     public void ExitYes()
